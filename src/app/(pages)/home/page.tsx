@@ -1,3 +1,5 @@
+"use client"
+
 import Clients from "@/components/clients/Client";
 import DroneSection from "./home-sections/drone-section";
 import FeaturedCategories from "./home-sections/featured-categories";
