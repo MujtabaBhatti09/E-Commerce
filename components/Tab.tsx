@@ -26,7 +26,7 @@ export default function ProductTab({
     // if (categories?.includes(tabItem)) {
     return (
         <div className="space-y-10">
-            <div className="flex justify-between items-center">
+            <div className="flex md:flex-row md:justify-between flex-col items-center">
                 <h2 className="text-2xl font-medium">
                     {title}
                 </h2>

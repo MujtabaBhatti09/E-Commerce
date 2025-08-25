@@ -2,11 +2,16 @@ import {
     Camera,
     Cpu,
     Headphones,
+    Heart,
+    LayoutGrid,
     Menu,
     Monitor,
     Phone,
     Printer,
-    Tv
+    Search,
+    ShoppingCart,
+    Tv,
+    User
 } from "lucide-react"
 
 export const searchNav = [
@@ -90,4 +95,28 @@ export const navItems = [
     {
         title: "Buy Theme",
     }
+]
+
+// Mobile View Botton Bar Items
+export const bottomItem = [
+    {
+        icon: LayoutGrid,
+        name: "Shop"
+    },
+    {
+        icon: Heart,
+        name: "Wishlist"
+    },
+    {
+        icon: ShoppingCart,
+        name: "Cart"
+    },
+    {
+        icon: User,
+        name: "Account"
+    },
+    {
+        icon: Search,
+        name: "Search"
+    },
 ]

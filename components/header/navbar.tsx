@@ -1,8 +1,9 @@
 "use client "
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion"
-import { navItems } from "../../constants/nav-items";
+import { bottomItem, navItems } from "../../constants/nav-items";
+import Menu from "@/public/icon-svg/menu.svg"
 import {
     BellIcon,
     ChevronDown,
@@ -11,6 +12,8 @@ import {
     ShoppingCart,
     User
 } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
     const [dd, setDD] = useState<string>("")
@@ -34,9 +37,46 @@ export default function Navbar() {
                     fixed inset-0
                     `}
             >
+                {/* Mobile View Navbar */}
                 <div className="2xl:container mx-auto container-fluid
-                    grid grid-cols-[1fr_auto_1fr] items-center
-                    px-4 py-6 justify-between"
+                    lg:hidden grid grid-cols-[1fr_auto_1fr] items-center
+                    px-4 py-2 justify-between"
+                >
+                    <Image className="" src={Menu} alt={"Menu"} />
+                    <div>
+                        <h2 className="text-5xl font-bold tracking-tight">kalles</h2>
+                    </div>
+
+                    <div className="flex items-center w-fit justify-self-end gap-x-4 relative">
+                        <Search className="
+                            cursor-pointer
+                            hover:text-blue-800 hover:scale-105
+                            transition-all duration-200"/>
+                        <User
+                            className="
+                            cursor-pointer
+                            hover:text-blue-800 hover:scale-105
+                            transition-all duration-200"
+                        />
+                        <Heart
+                            className="
+                            cursor-pointer
+                            hover:text-blue-800 hover:scale-105
+                            transition-all duration-200"
+                        />
+                        <ShoppingCart
+                            className="
+                            cursor-pointer
+                            hover:text-blue-800 hover:scale-105
+                            transition-all duration-200"
+                        />
+                    </div>
+                </div>
+
+                {/* Hidden After Large Breakpoint Top Nav Container */}
+                <div className="2xl:container mx-auto container-fluid
+                    lg:grid grid-cols-[1fr_auto_1fr] items-center
+                    px-4 py-6 justify-between hidden"
                 >
                     <div>
                         <h2 className="text-5xl font-bold tracking-tight">kalles</h2>
@@ -84,7 +124,9 @@ export default function Navbar() {
                         />
                     </div>
                 </div>
-                <div className="bg-blue px-4">
+
+                {/* Hidden After Large Breakpoint Blue NavItems Container */}
+                <div className="lg:block hidden bg-blue px-4">
                     <div className="2xl:container mx-auto container-fluid
                     flex justify-between items-center"
                     >
@@ -113,20 +155,30 @@ export default function Navbar() {
                                                     transition={{ duration: 0.2, ease: "linear" }}
                                                     className="
                                                 absolute top-full bg-white h-auto w-60
-                                                shadow-lg divide-y divide-gray-400
-                                            "
+                                                shadow-lg divide-y divide-gray-400"
                                                 >
-                                                    {val.childItems?.map((childitems, childIndex) => (
-                                                        <li
-                                                            key={childIndex}
-                                                            className="cursor-pointer hover:bg-[#F5F5F5] hover:text-gray-500
-                                                    flex items-center gap-x-1 px-4
-                                                    text-sm font-medium text-black
-                                                    py-2 transition-colors duration-200"
+                                                    {val.childItems?.map((childItems, childIndex) => (
+                                                        <Link
+                                                            href={`${childItems.title}`}
+                                                            className="
+                                                            cursor-pointer hover:bg-[#F5F5F5] hover:text-gray-500
+                                                            px-4 text-sm font-medium text-black
+                                                            py-2 transition-colors duration-200
+                                                            flex items-center gap-x-1"
                                                         >
-                                                            {childitems.icon && <childitems.icon className="text-gray-400" size={20} />}
-                                                            <p>{childitems.title}</p>
-                                                        </li>
+                                                            <li
+                                                                key={childIndex}
+                                                                className="flex items-center gap-x-1"
+                                                            >
+                                                                {childItems.icon &&
+                                                                    <childItems.icon
+                                                                        size={20}
+                                                                        className="text-gray-400"
+                                                                    />
+                                                                }
+                                                                <p>{childItems.title}</p>
+                                                            </li>
+                                                        </Link>
                                                     ))}
                                                 </motion.div>
                                             )}
@@ -149,6 +201,22 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            {/* Mobile Bottom Bar */}
+            <div className="fixed w-full h-fit inset-0
+            px-4 py-2 bg-white
+            mt-auto z-10 shadow-[0_-2px_10px_0_rgba(0,0,0,0.1)]
+            grid grid-cols-5 lg:hidden"
+            >
+                {bottomItem.map((item, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col items-center gap-y-1"
+                    >
+                        <item.icon size={20} />
+                        <p className="text-xs font-semibold">{item.name}</p>
+                    </div>
+                ))}
+            </div>
         </>
     )
 }

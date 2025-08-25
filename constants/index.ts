@@ -81,6 +81,19 @@ export const productCategories = [
     "Speaker",
 ]
 
+// Products Tab :Categories
+export const productPageCategories = [
+    "Laptop",
+    "Monitor",
+    "Smartphones",
+    "Smartwatch",
+    "Speaker",
+    "Electric",
+    "Sale",
+    "Headphone",
+    "Cameras",
+]
+
 // Products Tab :Products
 import BgMosquito from "@/public/assets/home/products/mosquito-killer.png"
 import HoverBgMosquito from "@/public/assets/home/products/hover-mosquito-killer.png"
@@ -195,7 +208,6 @@ export const featuredCategories = [
 ]
 
 // Clients
-
 export const clients = [
     C1, C2, C3, C4, C5
 ]

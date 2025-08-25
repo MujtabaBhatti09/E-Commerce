@@ -12,19 +12,23 @@ export default function HeroSection() {
 
     return (
         <>
-            <section className="pt-38 pb-[50px]">
+            <section className="lg:pt-38 pt-16 pb-[50px]">
                 <div className="space-y-10">
                     <Slider data={SliderData} />
-                    <div className="2xl:container mx-auto container-fluid flex gap-x-4 2xl:px-0 px-4 justify-between">
-                        {heroProducts.map((item, index) => (
-                            <ImageCard
-                                key={index}
-                                className=""
-                                title={item.title}
-                                image={item.image}
-                                btnText={item.btnText}
-                            />
-                        ))}
+                    <div className="2xl:container container-fluid
+                    2xl:px-0 px-4 mx-auto"
+                    >
+                        <div className="lg:flex hidden gap-x-4 justify-between">
+                            {heroProducts.map((item, index) => (
+                                <ImageCard
+                                    key={index}
+                                    className=""
+                                    title={item.title}
+                                    image={item.image}
+                                    btnText={item.btnText}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
