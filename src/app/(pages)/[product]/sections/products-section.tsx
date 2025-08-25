@@ -103,8 +103,7 @@ export default function Products({
                 2xl:container mx-auto container-fluid
                 2xl:px-0 px-4 gap-4
                 grid grid-cols-${columns}
-                `
-                }
+                `}
                 >
                     {products?.map((prod, index) => (
                         <ProductCard
