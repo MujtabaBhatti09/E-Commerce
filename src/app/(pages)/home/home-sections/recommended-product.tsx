@@ -2,24 +2,28 @@ import Button from "@/components/Button";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/constants";
 import { ChevronRight, ShoppingCart } from "lucide-react";
+import Galaxy from "@/public/assets/home/drone/Galaxy-Fold.png"
+import PS5 from "@/public/assets/home/drone/PS-5.jpg"
+import HandHeld from "@/public/assets/home/drone/Handheld.png"
+import ImageCard from "@/components/ImageCard";
 
 export default function RecommendedProducts() {
     return (
         <>
-            <section className="py-[50px] px-6 space-y-20">
-                <div className="container-fluid flex gap-x-6 grid-cols-12">
-                    <div className="bg-galaxy rounded-lg p-6 h-[80vh] space-y-6">
-                        <h4 className="text-xl font-medium w-7/12   ">
-                            Flex On All The Others
-                        </h4>
-                        <Button
-                            variant="ghost"
-                            text="Shop Now"
-                            className="!text-black !p-0"
-                            icon={<ChevronRight className="text-black" size={20} />}
+            <section className="py-[50px] space-y-20  px-4">
+                {/* Section Recommended-Products */}
+                <div className="container-fluid flex gap-x-10">
+                    <div className="flex-[20%]">
+                        <ImageCard
+                            className="h-full w-full"
+                            childClassName="!justify-start"
+                            image={Galaxy}
+                            textClassName="!w-10/12"
+                            btnText="Shop Now"
+                            title="Flex On All The Others"
                         />
                     </div>
-                    <div className="col-span-11 w-full space-y-4">
+                    <div className="space-y-4 flex-[80%]">
                         <div className="flex justify-between">
                             <h4 className="font-medium text-2xl">Recommended For You</h4>
                             <Button
@@ -35,6 +39,8 @@ export default function RecommendedProducts() {
                                 <ProductCard
                                     key={index}
                                     image={prod.image}
+                                    alt={`${index}`}
+                                    hoverImage={prod.hoverImage}
                                     title={prod.title}
                                     brand={prod.brand}
                                     oldPrice={prod.oldPrice}
@@ -48,20 +54,23 @@ export default function RecommendedProducts() {
                         </div>
                     </div>
                 </div>
-                <div className="bg-ps5 p-18 rounded-lg">
-                    <div className="space-y-12">
-                        <h4 className="text-4xl whitespace-break-spaces font-medium">
-                            PlayStation 5 Console
-                        </h4>
-                        <p className="text-gray text-sm">Experience an all-new generation of incredible games.</p>
-                        <Button
-                            text="Shop Now"
-                            icon={<ChevronRight size={20} />}
-                        />
-                    </div>
+                {/* Section PS5 */}
+                <div className="rounded-lg h-full">
+                    <ImageCard
+                        image={PS5}
+                        title="PlayStation 5 Console"
+                        childClassName="!p-20"
+                        btnVariant="fill"
+                        btnClassName="!p-4 !text-white"
+                        iconClassName="!text-white"
+                        textClassName="!text-4xl whitespace-break-spaces"
+                        btnText="Shop Now"
+                        subHeading="Experience an all-new generation of incredible games."
+                    />
                 </div>
+                {/* Section Top-Products */}
                 <div className="container-fluid flex gap-x-6 grid-cols-12">
-                    <div className="col-span-11 w-full space-y-4">
+                    <div className="flex-[80%] w-full space-y-4">
                         <div className="flex justify-between">
                             <h4 className="font-medium text-2xl">Top Products</h4>
                             <Button
@@ -77,6 +86,8 @@ export default function RecommendedProducts() {
                                 <ProductCard
                                     key={index}
                                     image={prod.image}
+                                    alt={`${index}`}
+                                    hoverImage={prod.hoverImage}
                                     title={prod.title}
                                     brand={prod.brand}
                                     oldPrice={prod.oldPrice}
@@ -89,15 +100,14 @@ export default function RecommendedProducts() {
 
                         </div>
                     </div>
-                    <div className="bg-handheld rounded-lg p-6 h-[80vh] space-y-6">
-                        <h4 className="text-xl font-medium w-7/12   ">
-                            A Gimbal With Street Smarts
-                        </h4>
-                        <Button
-                            variant="ghost"
-                            text="Shop Now"
-                            className="!text-black !p-0"
-                            icon={<ChevronRight className="text-black" size={20} />}
+                    <div className="flex-[20%]">
+                        <ImageCard
+                            className="h-full w-full"
+                            childClassName="!justify-start"
+                            image={HandHeld}
+                            textClassName="!w-10/12"
+                            btnText="Shop Now"
+                            title="Flex On All The Others"
                         />
                     </div>
                 </div>

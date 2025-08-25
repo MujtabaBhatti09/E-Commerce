@@ -130,7 +130,7 @@ export default function Navbar() {
                                     </AnimatePresence>
                                 </div>
                                 :
-                                <li key={index} className="font-medium py-4 px-6 cursor-pointer">
+                                <li key={index} className="font-medium py-4 px-4 cursor-pointer">
                                     <p>{val.title}</p>
                                 </li>
 

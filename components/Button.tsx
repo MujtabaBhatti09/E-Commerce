@@ -26,9 +26,10 @@ export default function Button({ className,
             }
             ${hover && `hover:bg[${hover}]`}
             ${className}
+            focus:outline-0
             text-white
             cursor-pointer
-            py-4 px-6 rounded-lg
+            p-4 rounded-lg
             flex gap-x-1 items-center
             `}
         >

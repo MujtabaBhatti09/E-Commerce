@@ -48,11 +48,13 @@ export default function ProductTab({
                     ))}
                 </div>
             </div>
-            <div className="flex gap-x-4">
+            <div className="flex h-full gap-x-4">
                 {products?.map((prod, index) => (
                     <ProductCard
                         key={index}
                         image={prod.image}
+                        hoverImage={prod.hoverImage}
+                        alt={`${index}`}
                         title={prod.title}
                         brand={prod.brand}
                         oldPrice={prod.oldPrice}

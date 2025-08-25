@@ -1,5 +1,8 @@
+import Image from "next/image";
 import Button from "./Button";
 import { StaticImport } from "next/dist/shared/lib/get-img-props"
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 interface CardProps {
     image: StaticImport | string;
@@ -18,7 +21,7 @@ interface CardProps {
 export default function ProductCard({
     image = "",
     hoverImage = "",
-    alt,
+    alt = "",
     discount,
     brand,
     title,
@@ -28,27 +31,60 @@ export default function ProductCard({
     icon,
     path
 }: CardProps) {
+    const [hover, setHover] = useState<boolean>(false)
+
     return (
         <div className="card group border rounded-lg
         border-[#ddddddb3] hover:border-[#2453d3]
-        flex-1 overflow-hidden transition-all duration-200
+        flex-1 transition-all duration-200
         ">
-            <div className="overflow-hidden w-full ">
-                <div className={`image
-                        transition-all duration-200
-                        p-2
-                        h-[44vh] ${image}
-                        `}
-                >
-                    {discount !== null && <div className="bg-orange py-1 px-1.5 w-fit rounded">
-                        <p className="text-white text-xs">{discount}</p>
-                    </div>
-                    }
+            <div className="overflow-hidden w-full rounded-t-lg">
+                <div
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                    className={`image relative h-[44vh]`}>
+                    <AnimatePresence mode="sync">
+                        {hover ?
+                            <motion.div
+                                key={"hover"}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.1, ease: "linear" }}
+                                className="h-full"
+                            >
+                                <Image
+                                    alt={alt}
+                                    src={hoverImage}
+                                    className="object-cover h-full w-full"
+                                />
+                            </motion.div>
+                            :
+                            <motion.div
+                                key={"normal"}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.2, ease: "linear" }}
+                                className="h-full"
+                            >
+                                <Image
+                                    alt={alt}
+                                    src={image}
+                                    className="object-cover h-full w-full"
+                                />
+                            </motion.div>
+                        }
+                        {discount !== null &&
+                            <div className="bg-orange py-1 px-1.5 w-fit rounded
+                        absolute top-4 left-4">
+                                <p className="text-white text-xs">{discount}</p>
+                            </div>
+                        }
+                    </AnimatePresence>
                 </div>
             </div>
-            <div className="card-body p-4 gap-y-6
-                        flex flex-col justify-between"
-            >
+            <div className="card-body p-4 gap-y-6 flex flex-col flex-grow justify-between">
                 <div className="space-y-2">
                     <p className="text-gray-400 text-xs">{brand}</p>
                     <h5 className="text-xl font-medium w-10/12">{title}</h5>

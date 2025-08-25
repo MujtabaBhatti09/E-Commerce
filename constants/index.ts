@@ -82,6 +82,16 @@ export const productCategories = [
 ]
 
 // Products Tab :Products
+import BgMosquito from "@/public/assets/home/products/mosquito-killer.png"
+import HoverBgMosquito from "@/public/assets/home/products/hover-mosquito-killer.png"
+import BgEggWhisk from "@/public/assets/home/products/egg-whisk.png"
+import HoverBgEggWhisk from "@/public/assets/home/products/hover-egg-whisk.png"
+import BgLamp from "@/public/assets/home/products/lamp.png"
+import HoverBgLamp from "@/public/assets/home/products/hover-lamp.png"
+import BgLaptop from "@/public/assets/home/products/laptop.png"
+import BgSSD from "@/public/assets/home/products/ssd.png"
+import HoverBgSSD from "@/public/assets/home/products/hover-ssd.png"
+
 export const products = [
     {
         id: 1,
@@ -91,7 +101,8 @@ export const products = [
         title: "Mosquito Killer Lamp",
         oldPrice: "Rs.8,700.00",
         price: "Rs.7,600.00",
-        image: "bg-mosquito-killer"
+        image: BgMosquito,
+        hoverImage: HoverBgMosquito
     },
     {
         id: 2,
@@ -101,7 +112,8 @@ export const products = [
         title: "Electric Egg Blender",
         oldPrice: null,
         price: "Rs.57,900.00",
-        image: "bg-electronic-egg-whisk"
+        image: BgEggWhisk,
+        hoverImage: HoverBgEggWhisk
     },
     {
         id: 3,
@@ -111,7 +123,8 @@ export const products = [
         title: "cymbal pendant",
         oldPrice: "Rs.10,200.00",
         price: "Rs.7,300.00",
-        image: "bg-lamp"
+        image: BgLamp,
+        hoverImage: HoverBgLamp
     },
     {
         id: 4,
@@ -121,7 +134,8 @@ export const products = [
         title: "NP730QED-KB2US Galaxy Book2",
         oldPrice: null,
         price: "Rs.115,800.00",
-        image: "bg-laptop"
+        image: BgLaptop,
+        hoverImage: HoverBgSSD
     },
     {
         id: 5,
@@ -131,7 +145,8 @@ export const products = [
         title: "ST-MPHSDM/USB-C Mobile Pro Hub SD",
         oldPrice: null,
         price: "Rs.20,300.00",
-        image: "bg-ssd"
+        image: BgSSD,
+        hoverImage: HoverBgSSD
     }
 ];
 

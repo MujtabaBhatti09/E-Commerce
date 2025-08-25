@@ -2,7 +2,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
     return (
-        <footer className="grid grid-cols-12 bg-gray-50 py-20 px-6">
+        <footer className="grid grid-cols-12 bg-gray-50 py-20 px-4">
             {/* Logo and Contact Info */}
             <div className="col-span-4 space-y-4">
                 <h1 className="text-5xl font-bold text-gray-900">kalles</h1>

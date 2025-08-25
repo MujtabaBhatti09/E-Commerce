@@ -3,7 +3,7 @@ import { productCategories, products } from "@/constants";
 
 export default function ProductsTabSection() {
     return (
-        <section className="py-[50px] px-6">
+        <section className="py-[50px] px-4">
             <div className="container-fluid">
                 <ProductTab
                     title="Featured Products"

@@ -2,7 +2,7 @@ import { featuredCategories } from "@/constants";
 
 export default function FeaturedCategories() {
     return (
-        <section className="px-6 py-[50px]">
+        <section className="px-4 py-[50px]">
             <div className="container-fluid mx-auto">
                 <div className="w-full border border-gray
                 grid lg:grid-cols-5 grid-cols-2 rounded-lg overflow-hidden"

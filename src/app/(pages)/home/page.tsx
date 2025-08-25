@@ -6,7 +6,7 @@ import FeaturedCategories from "./home-sections/featured-categories";
 import HeroSection from "./home-sections/hero-section";
 import ProductsTabSection from "./home-sections/products-tab-section";
 import RecommendedProducts from "./home-sections/recommended-product";
-import NewsLetter from "./home-sections/newslette";
+import NewsLetter from "./home-sections/newsletter";
 
 export default function HomePage() {
     return (
