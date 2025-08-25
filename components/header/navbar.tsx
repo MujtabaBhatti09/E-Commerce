@@ -34,7 +34,7 @@ export default function Navbar() {
                     fixed inset-0
                     `}
             >
-                <div className="container-fluid
+                <div className="2xl:container mx-auto container-fluid
                     grid grid-cols-[1fr_auto_1fr] items-center
                     px-4 py-6 justify-between"
                 >
@@ -84,64 +84,68 @@ export default function Navbar() {
                         />
                     </div>
                 </div>
-                <div className="container-fluid bg-blue px-4 flex justify-between items-center">
-                    <ul className="flex items-center text-white text-sm relative">
-                        {navItems.map((val, index) => (
-                            val.title === "All Categories" ?
-                                <div key={index}>
-                                    <li
-                                        onMouseEnter={() => setDD(val.title)}
-                                        onMouseLeave={() => setDD("")}
-                                        className="font-medium
+                <div className="bg-blue px-4">
+                    <div className="2xl:container mx-auto container-fluid
+                    flex justify-between items-center"
+                    >
+                        <ul className="flex items-center text-white text-sm relative">
+                            {navItems.map((val, index) => (
+                                val.title === "All Categories" ?
+                                    <div key={index}>
+                                        <li
+                                            onMouseEnter={() => setDD(val.title)}
+                                            onMouseLeave={() => setDD("")}
+                                            className="font-medium
                                         flex items-center p-4
                                         cursor-pointer
                                         bg-blue-dark w-60">
-                                        {val.icon && <val.icon />}
-                                        <p>{val.title}</p>
-                                    </li>
-                                    <AnimatePresence>
-                                        {dd === val.title && (
-                                            <motion.div
-                                                onMouseEnter={() => setDD(val.title)}
-                                                onMouseLeave={() => setDD("")}
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                exit={{ opacity: 0, y: 20 }}
-                                                transition={{ duration: 0.2, ease: "linear" }}
-                                                className="
+                                            {val.icon && <val.icon />}
+                                            <p>{val.title}</p>
+                                        </li>
+                                        <AnimatePresence>
+                                            {dd === val.title && (
+                                                <motion.div
+                                                    onMouseEnter={() => setDD(val.title)}
+                                                    onMouseLeave={() => setDD("")}
+                                                    initial={{ opacity: 0, y: 20 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    exit={{ opacity: 0, y: 20 }}
+                                                    transition={{ duration: 0.2, ease: "linear" }}
+                                                    className="
                                                 absolute top-full bg-white h-auto w-60
                                                 shadow-lg divide-y divide-gray-400
                                             "
-                                            >
-                                                {val.childItems?.map((childitems, childIndex) => (
-                                                    <li
-                                                        key={childIndex}
-                                                        className="cursor-pointer hover:bg-[#F5F5F5] hover:text-gray-500
+                                                >
+                                                    {val.childItems?.map((childitems, childIndex) => (
+                                                        <li
+                                                            key={childIndex}
+                                                            className="cursor-pointer hover:bg-[#F5F5F5] hover:text-gray-500
                                                     flex items-center gap-x-1 px-4
                                                     text-sm font-medium text-black
                                                     py-2 transition-colors duration-200"
-                                                    >
-                                                        {childitems.icon && <childitems.icon className="text-gray-400" size={20} />}
-                                                        <p>{childitems.title}</p>
-                                                    </li>
-                                                ))}
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
-                                </div>
-                                :
-                                <li key={index} className="font-medium py-4 px-4 cursor-pointer">
-                                    <p>{val.title}</p>
-                                </li>
+                                                        >
+                                                            {childitems.icon && <childitems.icon className="text-gray-400" size={20} />}
+                                                            <p>{childitems.title}</p>
+                                                        </li>
+                                                    ))}
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                    :
+                                    <li key={index} className="font-medium py-4 px-4 cursor-pointer">
+                                        <p>{val.title}</p>
+                                    </li>
 
-                        ))}
-                    </ul>
-                    <div className="flex items-center text-xs gap-x-1">
-                        <div className="flex gap-x-1 items-center text-white">
-                            <BellIcon size={15} />
-                            <p>Hotline:</p>
+                            ))}
+                        </ul>
+                        <div className="flex items-center text-xs gap-x-1">
+                            <div className="flex gap-x-1 items-center text-white">
+                                <BellIcon size={15} />
+                                <p>Hotline:</p>
+                            </div>
+                            <p className="text-yellow">(+92 323312344)</p>
                         </div>
-                        <p className="text-yellow">(+92 323312344)</p>
                     </div>
                 </div>
             </nav>

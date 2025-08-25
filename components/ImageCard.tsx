@@ -41,6 +41,7 @@ export default function ImageCard({
             <Image className="object-cover h-full w-full" src={image} alt={alt} />
             <div className={`absolute inset-0 ${childClassName}
                     h-full w-full space-y-10 py-6 px-4
+                    2xl:container mx-auto container-fluid
                     flex flex-col justify-center`}
             >
                 <h2 className={`w-6/12 text-xl font-medium ${textClassName}`}>{title}</h2>

@@ -10,9 +10,9 @@ import ImageCard from "@/components/ImageCard";
 export default function RecommendedProducts() {
     return (
         <>
-            <section className="py-[50px] space-y-20  px-4">
+            <section className="py-[50px] space-y-20 2xl:px-0 px-4">
                 {/* Section Recommended-Products */}
-                <div className="container-fluid flex gap-x-10">
+                <div className="2xl:container mx-auto container-fluid flex gap-x-10">
                     <div className="flex-[20%]">
                         <ImageCard
                             className="h-full w-full"
@@ -55,7 +55,7 @@ export default function RecommendedProducts() {
                     </div>
                 </div>
                 {/* Section PS5 */}
-                <div className="rounded-lg h-full">
+                <div className="2xl:container mx-auto container-fluid rounded-lg h-full">
                     <ImageCard
                         image={PS5}
                         title="PlayStation 5 Console"
@@ -69,7 +69,7 @@ export default function RecommendedProducts() {
                     />
                 </div>
                 {/* Section Top-Products */}
-                <div className="container-fluid flex gap-x-6 grid-cols-12">
+                <div className="2xl:container mx-auto container-fluid flex gap-x-6 grid-cols-12">
                     <div className="flex-[80%] w-full space-y-4">
                         <div className="flex justify-between">
                             <h4 className="font-medium text-2xl">Top Products</h4>

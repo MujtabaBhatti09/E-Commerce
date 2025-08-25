@@ -12,18 +12,20 @@ export default function HeroSection() {
 
     return (
         <>
-            <section className="pt-38 space-y-10 pb-[50px]">
-                <Slider data={SliderData} />
-                <div className="flex justify-between">
-                    {heroProducts.map((item, index) => (
-                        <ImageCard
-                            key={index}
-                            className="mx-4"
-                            title={item.title}
-                            image={item.image}
-                            btnText={item.btnText}
-                        />
-                    ))}
+            <section className="pt-38 pb-[50px]">
+                <div className="space-y-10">
+                    <Slider data={SliderData} />
+                    <div className="2xl:container mx-auto container-fluid flex gap-x-4 2xl:px-0 px-4 justify-between">
+                        {heroProducts.map((item, index) => (
+                            <ImageCard
+                                key={index}
+                                className=""
+                                title={item.title}
+                                image={item.image}
+                                btnText={item.btnText}
+                            />
+                        ))}
+                    </div>
                 </div>
             </section>
         </>
@@ -44,6 +46,7 @@ const SliderData = heroSliderData.map((item, index) => (
                 className="object-cover h-full w-full"
             />
             <div className="
+                2xl:container mx-auto container-fluid
                 absolute inset-0
                 h-fit w-full my-auto
                 space-y-8 px-4"

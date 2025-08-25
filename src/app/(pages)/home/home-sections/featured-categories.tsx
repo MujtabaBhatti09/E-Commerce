@@ -2,8 +2,8 @@ import { featuredCategories } from "@/constants";
 
 export default function FeaturedCategories() {
     return (
-        <section className="px-4 py-[50px]">
-            <div className="container-fluid mx-auto">
+        <section className="2xl:px-0 px-4 py-[50px]">
+            <div className="2xl:container mx-auto container-fluid">
                 <div className="w-full border border-gray
                 grid lg:grid-cols-5 grid-cols-2 rounded-lg overflow-hidden"
                 >
