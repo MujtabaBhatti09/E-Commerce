@@ -21,23 +21,28 @@ import C3 from "@/public/assets/clients/Amd.png"
 import C4 from "@/public/assets/clients/Zoom.png"
 import C5 from "@/public/assets/clients/OpenAI.png"
 
+// Importing Client Logos
+import Headphone from "@/public/assets/home/hero-section/Headphones.jpg"
+import SmartWatch from "@/public/assets/home/hero-section/SmartWatch.jpg"
+import WirelessCharger from "@/public/assets/home/hero-section/WirelessCharger.jpg"
+
 export const heroSliderData = [
     {
-        image: "bg-headphones",
+        image: Headphone,
         title: "Be At One \n With Your Music",
         subTitle: "WH-1000XM4 Wireless Noise Cancelling",
         btnText: "Discover More",
         path: "/"
     },
     {
-        image: "bg-smartwatch",
+        image: SmartWatch,
         title: "Flexible Dual Curved Display",
         subTitle: "Qualcomm Snapdragon Wear 3100",
         btnText: "Discover More",
         path: "/"
     },
     {
-        image: "bg-wirelesscharger",
+        image: WirelessCharger,
         title: "A Place For All Your Devices",
         subTitle: "Trio Wireless Charger With Magnetic Pad",
         btnText: "Discover More",

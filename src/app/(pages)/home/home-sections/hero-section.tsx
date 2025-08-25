@@ -5,6 +5,7 @@ import ImageCard from "@/components/ImageCard";
 import Slider from "@/components/Slider";
 import { heroProducts, heroSliderData } from "@/constants";
 import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 import { SwiperSlide } from "swiper/react";
 
 export default function HeroSection() {
@@ -31,14 +32,24 @@ export default function HeroSection() {
 
 const SliderData = heroSliderData.map((item, index) => (
     <SwiperSlide key={index}>
-        <div className={`${item.image}
+        <div className={`
+            relative
             flex items-center
-            px-4 h-screen w-full
+            h-screen w-full
             `}
         >
-            <div className="space-y-8">
+            <Image
+                src={item.image}
+                alt={`Slider-Image-${index}`}
+                className="object-cover h-full w-full"
+            />
+            <div className="
+                absolute inset-0
+                h-fit w-full my-auto
+                space-y-8 px-4"
+            >
                 <h2 className="
-                    text-[64px] max-w-9/12
+                    text-[64px] max-w-6/12
                     font-medium leading-18">
                     {item.title}
                 </h2>
