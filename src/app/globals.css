@@ -1,0 +1,547 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --c-white: #ffffff;
+  --c-white-26: #ffffff26;
+  --c-fafafa: #fafafa;
+  --c-f5f5f5: #f5f5f5;
+  --c-d9d9d9: #d9d9d9;
+  --c-cyan: #01bad4;
+  --c-orange: #ff4e00;
+  --c-gray-26: #8c8c8c26;
+  --c-pink: #f6024e;
+  --c-blue: #2453d3;
+  --c-blue-dark: #113eba;
+  --c-dark: #222222;
+  --c-dark-26: #22222226;
+  --c-darker: #141414;
+  --c-black-b3: #000000b3;
+  --c-black-1a: #0000001a;
+  --c-black: #000000;
+  --c-yellow: #faff00;
+  --c-gray: #8c8c8c;
+  --c-red: #ec0101;
+  --c-red-dark: #eb001b;
+  --c-red-mid: #d32424;
+  --c-eeeeee: #eeeeee;
+  --c-dddddd-59: #dddddd59;
+  --c-dddddd: #dddddd;
+  --c-dddddd-b3: #ddddddb3;
+  --c-dddddd-cc: #ddddddcc;
+  --c-d4d4d4: #d4d4d4;
+  --c-8c8c8c: #8c8c8c;
+  --c-green: #25a955;
+  --c-gray-33: #81818133;
+  --c-red-ff: #ff0000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Slider Background Images Start */
+.bg-headphones {
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/hero-section/Headphones.jpg");
+}
+
+.bg-smartwatch {
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/hero-section/SmartWatch.jpg");
+}
+
+.bg-wirelesscharger {
+  background-size: fill;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/hero-section/WirelessCharger.jpg");
+}
+
+/* Slider Background Images End*/
+
+/* Products Tab Background Images Start */
+.bg-mosquito-killer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/mosquito-killer.png");
+}
+
+.bg-mosquito-killer:hover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/hover-mosquito-killer.png");
+}
+
+.bg-electronic-egg-whisk {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/egg-whisk.png");
+}
+
+.bg-electronic-egg-whisk:hover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/hover-egg-whisk.png");
+}
+
+.bg-lamp {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/lamp.png");
+}
+
+.bg-lamp:hover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/hover-lamp.png");
+}
+
+.bg-laptop {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/laptop.png");
+}
+
+.bg-laptop:hover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/hover-ssd.png");
+}
+
+.bg-ssd {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/ssd.png");
+}
+
+.bg-ssd:hover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/products/hover-ssd.png");
+}
+
+/* Products Tab Background Images End*/
+
+/* Drone Section Background Image*/
+.bg-drone {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/drone/Drone.jpg");
+}
+
+/* Recommended Products Background Image*/
+.bg-galaxy {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/drone/Galaxy-Fold.png");
+}
+
+/* Recommended Products Background Image*/
+.bg-ps5 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/drone/PS-5.jpg");
+}
+
+/* Recommended Products Background Image*/
+.bg-handheld {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("/assets/Home/drone/Handheld.png");
+}
+
+/* Theme Colors ClassName Start */
+
+.bg-white-26 {
+  background-color: var(--c-white-26);
+}
+
+.bg-fafafa {
+  background-color: var(--c-fafafa);
+}
+
+.bg-f5f5f5 {
+  background-color: var(--c-f5f5f5);
+}
+
+.bg-d9d9d9 {
+  background-color: var(--c-d9d9d9);
+}
+
+.bg-cyan {
+  background-color: var(--c-cyan);
+}
+
+.bg-orange {
+  background-color: var(--c-orange);
+}
+
+.bg-gray-26 {
+  background-color: var(--c-gray-26);
+}
+
+.bg-pink {
+  background-color: var(--c-pink);
+}
+
+.bg-blue {
+  background-color: var(--c-blue);
+}
+
+.bg-blue-dark {
+  background-color: var(--c-blue-dark);
+}
+
+.bg-dark {
+  background-color: var(--c-dark);
+}
+
+.bg-dark-26 {
+  background-color: var(--c-dark-26);
+}
+
+.bg-darker {
+  background-color: var(--c-darker);
+}
+
+.bg-black-b3 {
+  background-color: var(--c-black-b3);
+}
+
+.bg-black-1a {
+  background-color: var(--c-black-1a);
+}
+
+.bg-yellow {
+  background-color: var(--c-yellow);
+}
+
+.bg-gray {
+  background-color: var(--c-gray);
+}
+
+.bg-red {
+  background-color: var(--c-red);
+}
+
+.bg-red-dark {
+  background-color: var(--c-red-dark);
+}
+
+.bg-red-mid {
+  background-color: var(--c-red-mid);
+}
+
+.bg-eeeeee {
+  background-color: var(--c-eeeeee);
+}
+
+.bg-dddddd-59 {
+  background-color: var(--c-dddddd-59);
+}
+
+.bg-dddddd {
+  background-color: var(--c-dddddd);
+}
+
+.bg-dddddd-b3 {
+  background-color: var(--c-dddddd-b3);
+}
+
+.bg-dddddd-cc {
+  background-color: var(--c-dddddd-cc);
+}
+
+.bg-d4d4d4 {
+  background-color: var(--c-d4d4d4);
+}
+
+.bg-green {
+  background-color: var(--c-green);
+}
+
+.bg-gray-33 {
+  background-color: var(--c-gray-33);
+}
+
+.bg-red-ff {
+  background-color: var(--c-red-ff);
+}
+
+/* Text utilities */
+
+.text-white-26 {
+  color: var(--c-white-26);
+}
+
+.text-fafafa {
+  color: var(--c-fafafa);
+}
+
+.text-f5f5f5 {
+  color: var(--c-f5f5f5);
+}
+
+.text-d9d9d9 {
+  color: var(--c-d9d9d9);
+}
+
+.text-cyan {
+  color: var(--c-cyan);
+}
+
+.text-orange {
+  color: var(--c-orange);
+}
+
+.text-gray-26 {
+  color: var(--c-gray-26);
+}
+
+.text-pink {
+  color: var(--c-pink);
+}
+
+.text-blue {
+  color: var(--c-blue);
+}
+
+.text-blue-dark {
+  color: var(--c-blue-dark);
+}
+
+.text-dark {
+  color: var(--c-dark);
+}
+
+.text-dark-26 {
+  color: var(--c-dark-26);
+}
+
+.text-darker {
+  color: var(--c-darker);
+}
+
+.text-black-b3 {
+  color: var(--c-black-b3);
+}
+
+.text-black-1a {
+  color: var(--c-black-1a);
+}
+
+.text-yellow {
+  color: var(--c-yellow);
+}
+
+.text-gray {
+  color: var(--c-gray);
+}
+
+.text-red {
+  color: var(--c-red);
+}
+
+.text-red-dark {
+  color: var(--c-red-dark);
+}
+
+.text-red-mid {
+  color: var(--c-red-mid);
+}
+
+.text-eeeeee {
+  color: var(--c-eeeeee);
+}
+
+.text-dddddd-59 {
+  color: var(--c-dddddd-59);
+}
+
+.text-dddddd {
+  color: var(--c-dddddd);
+}
+
+.text-dddddd-b3 {
+  color: var(--c-dddddd-b3);
+}
+
+.text-dddddd-cc {
+  color: var(--c-dddddd-cc);
+}
+
+.text-d4d4d4 {
+  color: var(--c-d4d4d4);
+}
+
+.text-8c8c8c {
+  color: var(--c-8c8c8c);
+}
+
+.text-green {
+  color: var(--c-green);
+}
+
+.text-gray-33 {
+  color: var(--c-gray-33);
+}
+
+.text-red-ff {
+  color: var(--c-red-ff);
+}
+
+/* Border utilities */
+
+.border-white-26 {
+  border-color: var(--c-white-26);
+}
+
+.border-fafafa {
+  border-color: var(--c-fafafa);
+}
+
+.border-f5f5f5 {
+  border-color: var(--c-f5f5f5);
+}
+
+.border-d9d9d9 {
+  border-color: var(--c-d9d9d9);
+}
+
+.border-cyan {
+  border-color: var(--c-cyan);
+}
+
+.border-orange {
+  border-color: var(--c-orange);
+}
+
+.border-gray-26 {
+  border-color: var(--c-gray-26);
+}
+
+.border-pink {
+  border-color: var(--c-pink);
+}
+
+.border-blue {
+  border-color: var(--c-blue);
+}
+
+.border-blue-dark {
+  border-color: var(--c-blue-dark);
+}
+
+.border-dark {
+  border-color: var(--c-dark);
+}
+
+.border-dark-26 {
+  border-color: var(--c-dark-26);
+}
+
+.border-darker {
+  border-color: var(--c-darker);
+}
+
+.border-black-b3 {
+  border-color: var(--c-black-b3);
+}
+
+.border-black-1a {
+  border-color: var(--c-black-1a);
+}
+
+.border-yellow {
+  border-color: var(--c-yellow);
+}
+
+.border-gray {
+  border-color: var(--c-gray);
+}
+
+.border-red {
+  border-color: var(--c-red);
+}
+
+.border-red-dark {
+  border-color: var(--c-red-dark);
+}
+
+.border-red-mid {
+  border-color: var(--c-red-mid);
+}
+
+.border-eeeeee {
+  border-color: var(--c-eeeeee);
+}
+
+.border-dddddd-59 {
+  border-color: var(--c-dddddd-59);
+}
+
+.border-dddddd {
+  border-color: var(--c-dddddd);
+}
+
+.border-dddddd-b3 {
+  border-color: var(--c-dddddd-b3);
+}
+
+.border-dddddd-cc {
+  border-color: var(--c-dddddd-cc);
+}
+
+.border-d4d4d4 {
+  border-color: var(--c-d4d4d4);
+}
+
+.border-green {
+  border-color: var(--c-green);
+}
+
+.border-gray-33 {
+  border-color: var(--c-gray-33);
+}
+
+.border-red-ff {
+  border-color: var(--c-red-ff);
+}
+
+/* Theme Colors ClassName End */
