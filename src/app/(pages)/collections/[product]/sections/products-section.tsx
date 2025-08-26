@@ -1,10 +1,10 @@
-import Image from "next/image";
 import BgDrone from "@/public/assets/home/drone/Drone.jpg"
 import { ParamValue } from "next/dist/server/request/params";
 import { Filter, ShoppingCart } from "lucide-react";
-import { productCategories, products } from "@/constants";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
+import Slider from "@/components/Slider";
+import { getCategories, getProducts } from "@/constants/getFakeProducts";
 
 interface Props {
     title?: string | ParamValue;
@@ -15,6 +15,18 @@ export default function Products({
 }: Props) {
     const containers = [2, 3, 4, 5, 6];
     const [columns, setColumns] = useState<string>("1")
+    const [products, setProducts] = useState<any[]>([])
+    const [productCategories, setProductCategories] = useState<any[]>([])
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const prods = await getProducts("5")
+            const cats = await getCategories()
+            setProducts(prods)
+            setProductCategories(cats)
+        }
+        fetchProducts()
+    }, [])
 
     const handleColumns = (column: number) => {
         console.log(column)
@@ -25,19 +37,10 @@ export default function Products({
         <>
             <section className="space-y-10">
                 {/* Banner */}
-                <div className="relative 2xl:h-[30vh] h-[24vh]">
-                    <Image
-                        src={BgDrone}
-                        alt="banner"
-                        className="object-cover w-full h-full"
-                    />
-                    <div className="absolute inset-0
-                    flex items-center justify-center
-                    h-full w-full bg-black/60"
-                    >
-                        <p className={`text-xl font-medium text-white`}>{title}</p>
-                    </div>
-                </div>
+                <Slider
+                    type="banner"
+                    bannerImage={BgDrone}
+                />
                 {/* Filter Products */}
                 <div className="
                     2xl:container mx-auto container-fluid
@@ -107,17 +110,11 @@ export default function Products({
                 >
                     {products?.map((prod, index) => (
                         <ProductCard
+                            {...prod}
                             key={index}
-                            image={prod.image}
-                            hoverImage={prod.hoverImage}
-                            alt={`${index}`}
-                            title={prod.title}
-                            brand={prod.brand}
-                            oldPrice={prod.oldPrice}
-                            price={prod.price}
-                            discount={prod.discount}
-                            icon={<ShoppingCart className="text-blue" />}
+                            alt={`Product-Image-${index}`}
                             btnText="Add To Cart"
+                            icon={<ShoppingCart className="text-blue" />}
                         />
                     ))}
                 </div>

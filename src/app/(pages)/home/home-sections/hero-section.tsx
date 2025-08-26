@@ -14,7 +14,7 @@ export default function HeroSection() {
         <>
             <section className="lg:pt-38 pt-16 pb-[50px]">
                 <div className="space-y-10">
-                    <Slider data={SliderData} />
+                    <Slider type="slider" data={SliderData} />
                     <div className="2xl:container container-fluid
                     2xl:px-0 px-4 mx-auto"
                     >
@@ -56,6 +56,7 @@ const SliderData = heroSliderData.map((item, index) => (
                 space-y-8 px-4"
             >
                 <h2 className="
+                    [word-spacing:1px]
                     text-[64px] max-w-6/12
                     font-medium leading-18">
                     {item.title}

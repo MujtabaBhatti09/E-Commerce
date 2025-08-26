@@ -28,7 +28,7 @@ export default function Footer() {
                 </div>
 
                 {/* Categories */}
-                <div className="grid grid-cols-4 col-span-8">
+                <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 col-span-8 lg:gap-0 gap-y-4">
                     <div className="">
                         <h3 className="text-xl font-semibold mb-6 text-gray-900">Categories</h3>
                         <ul className="space-y-3">

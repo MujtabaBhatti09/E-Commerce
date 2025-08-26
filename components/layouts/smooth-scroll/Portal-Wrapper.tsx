@@ -1,5 +1,4 @@
-// components/PortalWrapper.tsx
-'use client';
+"use client";
 
 import { createPortal } from "react-dom";
 import { useEffect, useState } from "react";

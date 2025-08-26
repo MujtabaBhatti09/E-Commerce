@@ -8,13 +8,15 @@ interface CardProps {
     image: StaticImport | string;
     hoverImage?: StaticImport | string;
     alt?: string;
-    discount: string | null;
+    discount: string | null | number;
     brand: string;
     title: string;
-    oldPrice: string | null;
-    price: string;
+    price: string | number;
     btnText: string;
     icon: React.ReactNode;
+    description?: string;
+    color?: string;
+    model?: string;
     path?: string;
 }
 
@@ -25,14 +27,18 @@ export default function ProductCard({
     discount,
     brand,
     title,
-    oldPrice,
     price,
     btnText,
     icon,
-    path
+    path,
+    description,
+    color,
+    model
 }: CardProps) {
     const [hover, setHover] = useState<boolean>(false)
-
+    const parsePrice = Number(price)
+    const parseDiscount = Number(discount) || 0
+    const oldPrice = parsePrice * (1 - parseDiscount / 100)
     return (
         <div className="card group border rounded-lg
         border-[#ddddddb3] hover:border-[#2453d3]
@@ -53,11 +59,23 @@ export default function ProductCard({
                                 transition={{ duration: 0.1, ease: "linear" }}
                                 className="h-full"
                             >
-                                <Image
-                                    alt={alt}
-                                    src={hoverImage}
-                                    className="object-cover h-full w-full"
-                                />
+                                {hoverImage ?
+                                    <Image
+                                        alt={alt}
+                                        src={hoverImage}
+                                        height={400}
+                                        width={400}
+                                        className="object-cover h-full w-full"
+                                    />
+                                    :
+                                    <Image
+                                        alt={alt}
+                                        src={image}
+                                        height={400}
+                                        width={400}
+                                        className="object-cover h-full w-full"
+                                    />
+                                }
                             </motion.div>
                             :
                             <motion.div
@@ -71,6 +89,8 @@ export default function ProductCard({
                                 <Image
                                     alt={alt}
                                     src={image}
+                                    height={400}
+                                    width={400}
                                     className="object-cover h-full w-full"
                                 />
                             </motion.div>
@@ -78,7 +98,7 @@ export default function ProductCard({
                         {discount !== null &&
                             <div className="bg-orange py-1 px-1.5 w-fit rounded
                         absolute top-4 left-4">
-                                <p className="text-white text-xs">{discount}</p>
+                                <p className="text-white text-xs">-{discount}%</p>
                             </div>
                         }
                     </AnimatePresence>
@@ -87,11 +107,13 @@ export default function ProductCard({
             <div className="card-body p-4 gap-y-6 flex flex-col flex-grow justify-between">
                 <div className="space-y-2">
                     <p className="text-gray-400 text-xs">{brand}</p>
-                    <h5 className="text-xl font-medium w-10/12">{title}</h5>
-                    {oldPrice ?
+                    <h5 className="
+                    line-clamp-2
+                    text-lg font-medium w-10/12">{title}</h5>
+                    {discount ?
                         <div className="flex gap-x-2 items-center">
-                            {<p className="text-xs text-gray-300 line-through">RS.{oldPrice}</p>}
-                            <p className="text-xs text-red">RS.{price}</p>
+                            {oldPrice && <p className="text-xs text-gray-300 line-through">RS.{price}</p>}
+                            <p className="text-xs text-red">RS.{oldPrice}</p>
                         </div>
                         :
                         <p className="text-xs text-black">RS.{price}</p>

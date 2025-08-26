@@ -12,18 +12,19 @@ export default function FeaturedCategories() {
                             key={index}
                             className={`
                             group
-                            
                             hover:bg-[var(--c-blue)]
+                            transition-colors duration-300
                             ${index > 4 ? "border-r" : "border-r border-b"}
                             flex flex-col items-center
                             p-6 gap-y-2 border-gray`}
                         >
                             <cat.icon
                                 size={50}
-                                className="group-hover:text-white"
+                                className="group-hover:text-white
+                                transition-colors duration-300 ease-linear"
                             />
                             <p className="group-hover:text-white
-                            transition-colors duration-500 ease-linear"
+                            transition-colors duration-300 ease-linear"
                             >
                                 {cat.title}
                             </p>

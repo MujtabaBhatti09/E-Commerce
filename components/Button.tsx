@@ -24,12 +24,13 @@ export default function Button({ className,
                         :
                         ""
             }
-            ${hover && `hover:bg[${hover}]`}
-            ${className}
+            ${hover && `hover:bg-[${hover}]`}
+            ${className} border
             focus:outline-0
             text-white
             cursor-pointer
             p-4 rounded-lg
+            trasnition-all duration-200
             flex gap-x-1 items-center
             `}
         >
