@@ -1,13 +1,24 @@
 import Button from "@/components/Button";
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/constants";
 import { ChevronRight, ShoppingCart } from "lucide-react";
 import Galaxy from "@/public/assets/home/drone/Galaxy-Fold.png"
 import PS5 from "@/public/assets/home/drone/PS-5.jpg"
 import HandHeld from "@/public/assets/home/drone/Handheld.png"
 import ImageCard from "@/components/ImageCard";
+import { useEffect, useState } from "react";
+import { getProducts } from "@/constants/getFakeProducts";
 
 export default function RecommendedProducts() {
+    const [products, setProducts] = useState<any[]>([])
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const prods = await getProducts("5")
+            setProducts(prods)
+        }
+        fetchProducts()
+    }, [])
+    
     return (
         <>
             <section className="py-[50px] space-y-20 2xl:px-0 px-4">
@@ -37,15 +48,8 @@ export default function RecommendedProducts() {
                             {products.map((prod, index) => (
                                 index < 4 &&
                                 <ProductCard
+                                    {...prod}
                                     key={index}
-                                    image={prod.image}
-                                    alt={`${index}`}
-                                    hoverImage={prod.hoverImage}
-                                    title={prod.title}
-                                    brand={prod.brand}
-                                    oldPrice={prod.oldPrice}
-                                    price={prod.price}
-                                    discount={prod.discount}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
                                 />
@@ -84,15 +88,8 @@ export default function RecommendedProducts() {
                             {products.map((prod, index) => (
                                 index < 4 &&
                                 <ProductCard
+                                    {...prod}
                                     key={index}
-                                    image={prod.image}
-                                    alt={`${index}`}
-                                    hoverImage={prod.hoverImage}
-                                    title={prod.title}
-                                    brand={prod.brand}
-                                    oldPrice={prod.oldPrice}
-                                    price={prod.price}
-                                    discount={prod.discount}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
                                 />
