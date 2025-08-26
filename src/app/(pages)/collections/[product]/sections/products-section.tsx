@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import Slider from "@/components/Slider";
 import { getCategories, getProducts } from "@/constants/getFakeProducts";
+import { productImages } from "@/constants/slugProducts";
 
 interface Props {
     title?: string | ParamValue;
@@ -112,8 +113,9 @@ export default function Products({
                         <ProductCard
                             {...prod}
                             key={index}
-                            alt={`Product-Image-${index}`}
                             btnText="Add To Cart"
+                            image={productImages[index]}
+                            alt={`Product-Image-${index}`}
                             icon={<ShoppingCart className="text-blue" />}
                         />
                     ))}

@@ -5,6 +5,7 @@ import ProductCard from "./ProductCard";
 import { ShoppingCart } from "lucide-react";
 import { SwiperSlide } from "swiper/react";
 import Slider from "./Slider";
+import { productImages } from "@/constants/slugProducts";
 
 interface Props {
     title: string;
@@ -83,9 +84,10 @@ const SliderComponent = ({ products, tabItem }: SliderProps) => (
             return (
                 <SwiperSlide className="w-50" key={index}>
                     <ProductCard
-                        icon={<ShoppingCart className="text-blue" />}
-                        btnText="Add To Cart"
                         {...prod}
+                        btnText="Add To Cart"
+                        image={productImages[index]}
+                        icon={<ShoppingCart className="text-blue" />}
                     />
                 </SwiperSlide>
             );

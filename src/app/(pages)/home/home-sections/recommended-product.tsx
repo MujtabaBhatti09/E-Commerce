@@ -7,6 +7,7 @@ import HandHeld from "@/public/assets/home/drone/Handheld.png"
 import ImageCard from "@/components/ImageCard";
 import { useEffect, useState } from "react";
 import { getProducts } from "@/constants/getFakeProducts";
+import { productImages } from "@/constants/slugProducts";
 
 export default function RecommendedProducts() {
     const [products, setProducts] = useState<any[]>([])
@@ -18,7 +19,7 @@ export default function RecommendedProducts() {
         }
         fetchProducts()
     }, [])
-    
+
     return (
         <>
             <section className="py-[50px] space-y-20 2xl:px-0 px-4">
@@ -49,6 +50,7 @@ export default function RecommendedProducts() {
                                 index < 4 &&
                                 <ProductCard
                                     {...prod}
+                                    image={productImages[index]}
                                     key={index}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
@@ -90,6 +92,7 @@ export default function RecommendedProducts() {
                                 <ProductCard
                                     {...prod}
                                     key={index}
+                                    image={productImages[index]}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
                                 />

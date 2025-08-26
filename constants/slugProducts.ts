@@ -8,6 +8,14 @@ import BgLaptop from "@/public/assets/home/products/laptop.png"
 import BgSSD from "@/public/assets/home/products/ssd.png"
 import HoverBgSSD from "@/public/assets/home/products/hover-ssd.png"
 
+export const productImages = [
+    BgMosquito,
+    BgEggWhisk,
+    BgLamp,
+    BgLaptop,
+    BgSSD
+]
+
 const slugProducts: any = {
     "Show All": [],
     Monitor: [
