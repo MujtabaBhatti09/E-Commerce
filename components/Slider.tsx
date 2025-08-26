@@ -5,15 +5,16 @@ import 'swiper/css/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import { useRef } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 interface Props {
     type: "slider" | "banner";
     showCarouselBtn?: boolean;
     showCarouselPagination?: boolean;
     showCarouselClassName?: boolean;
-    bannerImage?: StaticImageData | string;
+    bannerImage?: StaticImport | string;
     bannerTitle?: string;
     bannerSubTitle?: string | React.ReactNode;
     bannerParentClassName?: string;
