@@ -8,6 +8,7 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import { ParamValue } from 'next/dist/server/request/params';
 
 interface Props {
     type: "slider" | "banner";
@@ -15,7 +16,7 @@ interface Props {
     showCarouselPagination?: boolean;
     showCarouselClassName?: boolean;
     bannerImage?: StaticImport | string;
-    bannerTitle?: string;
+    bannerTitle?: string | ParamValue;
     bannerSubTitle?: string | React.ReactNode;
     bannerParentClassName?: string;
     bannerImageClassName?: string;
@@ -76,19 +77,19 @@ export default function Slider({
                     <Swiper
                         breakpoints={{
                             '@0.00': {
-                                slidesPerView: slidesXs,
+                                slidesPerView: slidesXs || 1,
                                 spaceBetween: spaceXs,
                             },
                             '@0.75': {
-                                slidesPerView: slidesSm,
+                                slidesPerView: slidesSm || 1,
                                 spaceBetween: spaceSm,
                             },
                             '@1.00': {
-                                slidesPerView: slidesMd,
+                                slidesPerView: slidesMd || 1,
                                 spaceBetween: spaceMd,
                             },
                             '@1.50': {
-                                slidesPerView: slidesLg,
+                                slidesPerView: slidesLg || 1,
                                 spaceBetween: spaceLg,
                             },
                         }}
@@ -112,7 +113,7 @@ export default function Slider({
                         }}
                         autoplay={{ delay: 3000, disableOnInteraction: false }}
                         modules={modules || [Navigation, Autoplay]}
-                        className="mySwiper flex"
+                        className="mySwiper"
                     >
                         {data}
                     </Swiper>

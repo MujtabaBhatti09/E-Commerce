@@ -64,7 +64,13 @@ const SliderData = heroSliderData.map((item, index) => (
                 <p className="text-8c8c8c font-medium">
                     {item.subTitle}
                 </p>
-                <Button icon={<ChevronRight className="text-white" size={20} />} text={item.btnText} />
+                <Button
+                    size="lg"
+                    className="hover:!bg-[--c-blue-dark]"
+                    icon={<ChevronRight className="text-white" size={20} />}
+                >
+                    {item.btnText}
+                </Button>
             </div>
         </div>
     </SwiperSlide>

@@ -51,7 +51,7 @@ export default function SmoothScrollWrapper({ children }: { children: React.Reac
       {/* Fixed content that moves */}
       <div
         ref={contentRef}
-        className="fixed top-0 left-0 w-full will-change-transform"
+        className="fixed top-0 left-0 w-full will-change-transform scroll-wrapper-root"
       >
         {children}
       </div>

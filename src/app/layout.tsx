@@ -1,8 +1,10 @@
+import 'swiper/css';
+import "./globals.css";
+import 'swiper/css/bundle';
 import type { Metadata } from "next";
 import { Poppins, Libre_Baskerville } from "next/font/google";
-import "./globals.css";
-import CustomLayout from "../../components/layouts/custom-layout";
-import SmoothScrollWrapper from "../../components/layouts/smooth-scroll/Smooth-Scroll";
+import CustomLayout from "@/components/layouts/custom-layout";
+import SmoothScrollWrapper from "@/components/layouts/smooth-scroll/Smooth-Scroll";
 
 const poppins = Poppins({
   variable: "--font-poppins",

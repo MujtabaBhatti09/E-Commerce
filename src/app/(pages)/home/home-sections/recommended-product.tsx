@@ -40,17 +40,18 @@ export default function RecommendedProducts() {
                             <h4 className="font-medium text-2xl">Recommended For You</h4>
                             <Button
                                 variant="ghost"
-                                text="View All"
                                 className="text-blue !p-0"
                                 icon={<ChevronRight className="text-blue" size={20} />}
-                            />
+                            >
+                                View All
+                            </Button>
                         </div>
                         <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
                             {products.map((prod, index) => (
                                 index < 4 &&
                                 <ProductCard
                                     {...prod}
-                                    image={productImages[index]}
+                                    image={prod.image}
                                     key={index}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
@@ -81,10 +82,11 @@ export default function RecommendedProducts() {
                             <h4 className="font-medium text-2xl">Top Products</h4>
                             <Button
                                 variant="ghost"
-                                text="View All"
                                 className="text-blue !p-0"
                                 icon={<ChevronRight className="text-blue" size={20} />}
-                            />
+                            >
+                                View All
+                            </Button>
                         </div>
                         <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
                             {products.map((prod, index) => (
@@ -92,7 +94,7 @@ export default function RecommendedProducts() {
                                 <ProductCard
                                     {...prod}
                                     key={index}
-                                    image={productImages[index]}
+                                    image={prod.image}
                                     icon={<ShoppingCart className="text-blue" />}
                                     btnText="Add To Cart"
                                 />

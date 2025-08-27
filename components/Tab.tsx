@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ProductCard from "./ProductCard";
-import { ShoppingCart } from "lucide-react";
-import { SwiperSlide } from "swiper/react";
-import Slider from "./Slider";
+import { ChevronLeft, ChevronRight, ShoppingCart } from "lucide-react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
 import { productImages } from "@/constants/slugProducts";
 
 interface Props {
@@ -18,7 +18,8 @@ export default function ProductTab({
     categories,
     products
 }: Props) {
-
+    const prevRef = useRef<HTMLDivElement>(null);
+    const nextRef = useRef<HTMLDivElement>(null);
     const [tabItem, setTabItem] = useState<string>("Show All")
 
     const handleTabItem = (tabValue: string) => {
@@ -61,37 +62,67 @@ export default function ProductTab({
                     ))}
                 </div>
             </div>
-            <div className="flex">
-            <Slider
-                type="slider"
-                slidesLg={4}
-                slidesMd={4}
-                showCarouselBtn
-                data={<SliderComponent products={products} tabItem={tabItem} />}
-            />
+            <div className="carousel h-full w-full relative">
+                <div ref={prevRef} className="text-black absolute left-0 top-1/2 z-50 cursor-pointer"><ChevronLeft size={40} /></div>
+                <div ref={nextRef} className="text-black absolute right-0 top-1/2 z-50 cursor-pointer"><ChevronRight size={40} /></div>
+                <Swiper
+                    breakpoints={{
+                        '@0.00': {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                        '@0.75': {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                        '@1.00': {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                        '@1.50': {
+                            slidesPerView: 4,
+                            spaceBetween: 30,
+                        },
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    loop={true}
+                    navigation={{
+                        prevEl: prevRef.current,
+                        nextEl: nextRef.current,
+                    }}
+                    onInit={(swiper) => {
+                        // Necessary because refs are null on first render
+                        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                        // @ts-ignore
+                        swiper.params.navigation.prevEl = prevRef.current;
+                        // @ts-ignore
+                        swiper.params.navigation.nextEl = nextRef.current;
+                        swiper.navigation.init();
+                        swiper.navigation.update();
+                    }}
+                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    modules={[Navigation, Autoplay]}
+                    className="mySwiper"
+                >
+                    {products?.map((prod: any, index: number) => {
+                        if (tabItem === "Show All" || tabItem === prod.category) {
+                            return (
+                                <SwiperSlide className="" key={index}>
+                                    <ProductCard
+                                        {...prod}
+                                        btnText="Add To Cart"
+                                        image={prod.image}
+                                        icon={<ShoppingCart className="text-blue group-hover:!text-white" />}
+                                    />
+                                </SwiperSlide>
+                            );
+                        }
+                        return null;
+                    })}
+                </Swiper>
             </div>
         </div>
     )
 }
-interface SliderProps {
-    products: any;
-    tabItem?: string;
-}
-
-const SliderComponent = ({ products, tabItem }: SliderProps) => (
-    products?.map((prod: any, index: number) => {
-        if (tabItem === "Show All" || tabItem === prod.category) {
-            return (
-                <SwiperSlide className="w-50" key={index}>
-                    <ProductCard
-                        {...prod}
-                        btnText="Add To Cart"
-                        image={productImages[index]}
-                        icon={<ShoppingCart className="text-blue" />}
-                    />
-                </SwiperSlide>
-            );
-        }
-        return null;
-    })
-)

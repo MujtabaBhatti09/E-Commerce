@@ -188,7 +188,8 @@ export default function Navbar({ navPosition }: NavProp) {
                                                 >
                                                     {val.childItems?.map((childItems, childIndex) => (
                                                         <Link
-                                                            href={`/collections/${childItems.title}`}
+                                                            key={childIndex}
+                                                            href={`/collections/products/${childItems.title}`}
                                                             className="
                                                             cursor-pointer hover:bg-[var(--c-blue)] hover:text-white
                                                             px-4 text-sm font-medium text-black
@@ -196,7 +197,6 @@ export default function Navbar({ navPosition }: NavProp) {
                                                             flex items-center gap-x-1"
                                                         >
                                                             <li
-                                                                key={childIndex}
                                                                 className="flex items-center gap-x-1.5 text-xs"
                                                             >
                                                                 {childItems.icon &&

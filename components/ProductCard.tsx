@@ -40,7 +40,7 @@ export default function ProductCard({
     const parseDiscount = Number(discount) || 0
     const oldPrice = parsePrice * (1 - parseDiscount / 100)
     return (
-        <div className="card group border rounded-lg
+        <div className="card group-first:group border rounded-lg
         border-[#ddddddb3] hover:border-[#2453d3]
         flex-1 transition-all duration-200
         ">
@@ -122,12 +122,13 @@ export default function ProductCard({
                 <div className="btn">
                     <Button
                         icon={icon}
-                        hover="var(--c-blue)"
-                        className="text-blue !px-4
-                        justify-between border border-gray-400 hover:border-[#ddddd] w-full"
-                        text={btnText}
+                        iconPosition="right"
+                        className="text-blue !px-4 hover:!text-white hover:!bg-[var(--c-blue)]
+                        !justify-between border border-gray-400 hover:border-[#ddddd] w-full group"
                         variant="outline"
-                    />
+                    >
+                        {btnText}
+                    </Button>
                 </div>
             </div>
         </div>
