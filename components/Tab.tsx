@@ -28,7 +28,7 @@ export default function ProductTab({
 
     return (
         <div className="space-y-10">
-            <div className="flex md:flex-row md:justify-between flex-col items-center">
+            <div className="flex md:flex-row md:justify-between flex-col items-center gap-y-4">
                 <h2 className="text-2xl font-medium">
                     {title}
                 </h2>
@@ -36,7 +36,7 @@ export default function ProductTab({
                     <p
                         onClick={() => handleTabItem("Show All")}
                         className={`
-                            p-1 text-sm cursor-pointer
+                            sm:p-1 p-0.5 sm:text-sm text-xs cursor-pointer
                             hover:text-[var(--c-blue)]
                             font-medium capitalize
                             transition-colors duration-200 ease-in
@@ -50,7 +50,7 @@ export default function ProductTab({
                             onClick={() => handleTabItem(cat)}
                             key={index}
                             className={`
-                            p-1 text-sm cursor-pointer
+                            sm:p-1 p-0.5 sm:text-sm text-xs cursor-pointer
                             hover:text-[var(--c-blue)]
                             font-medium capitalize
                             transition-colors duration-200 ease-in
@@ -68,11 +68,11 @@ export default function ProductTab({
                 <Swiper
                     breakpoints={{
                         '@0.00': {
-                            slidesPerView: 4,
+                            slidesPerView: 1,
                             spaceBetween: 30,
                         },
                         '@0.75': {
-                            slidesPerView: 4,
+                            slidesPerView: 2,
                             spaceBetween: 30,
                         },
                         '@1.00': {
@@ -113,7 +113,7 @@ export default function ProductTab({
                                     <ProductCard
                                         {...prod}
                                         btnText="Add To Cart"
-                                        image={prod.image}
+                                        image={productImages[index]}
                                         icon={<ShoppingCart className="text-blue group-hover:!text-white" />}
                                     />
                                 </SwiperSlide>

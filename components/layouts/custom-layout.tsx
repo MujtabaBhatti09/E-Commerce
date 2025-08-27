@@ -1,5 +1,7 @@
 "use client"
 
+import 'swiper/css';
+import 'swiper/css/bundle';
 import Footer from "../footer/footer";
 import Navbar from "../header/navbar";
 import PortalWrapper from "./smooth-scroll/Portal-Wrapper";

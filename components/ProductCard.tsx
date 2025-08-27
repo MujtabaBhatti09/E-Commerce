@@ -48,7 +48,7 @@ export default function ProductCard({
                 <div
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
-                    className={`image relative h-[44vh]`}>
+                    className={`image relative md:h-[44vh] sm:h-[40vh] h-[36vh]`}>
                     <AnimatePresence mode="sync">
                         {hover ?
                             <motion.div

@@ -3,9 +3,9 @@ import { Mail, MapPin, Phone } from "lucide-react";
 export default function Footer() {
     return (
         <footer className="py-20 2xl:px-0 px-4">
-            <div className="2xl:container mx-auto container-fluid grid grid-cols-12">
+            <div className="2xl:container mx-auto container-fluid grid grid-cols-12 md:gap-0 gap-10">
                 {/* Logo and Contact Info */}
-                <div className="col-span-4 space-y-4">
+                <div className="md:col-span-4 col-span-6 space-y-4">
                     <h1 className="text-5xl font-bold text-gray-900">kalles</h1>
                     <p className="text-gray-700 mb-4 text-sm">
                         All Rights Reserved © 2023 <a href="#" className="text-blue-600">Kalles</a><br />

@@ -6,8 +6,8 @@ export default function NewsLetter() {
         <section className="bg-blue py-10">
             <Container>
                 <div className="
-                    grid md:grid-cols-[1fr_auto_1fr] grid-cols-2
-                    justify-between items-center"
+                    grid md:grid-cols-[1fr_auto_1fr] sm:grid-cols-2
+                    grid-cols-1 md:gap-0 sm:gap-4 gap-8 justify-between items-center"
                 >
 
                     <div className="flex gap-x-2 text-white items-center">
@@ -15,7 +15,7 @@ export default function NewsLetter() {
                         <p className="font-medium text-2xl w-1/2">Sign Up to Newsletter</p>
                     </div>
                     <p className="font-medium text-white">Get our emails for info on new items, sales and more.</p>
-                    <div className="relative justify-self-end w-3/4">
+                    <div className="relative md:justify-self-end w-3/4">
                         <input
                             type="text"
                             placeholder="Your email address"

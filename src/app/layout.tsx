@@ -1,6 +1,4 @@
-import 'swiper/css';
 import "./globals.css";
-import 'swiper/css/bundle';
 import type { Metadata } from "next";
 import { Poppins, Libre_Baskerville } from "next/font/google";
 import CustomLayout from "@/components/layouts/custom-layout";

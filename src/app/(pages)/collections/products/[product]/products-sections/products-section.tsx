@@ -119,7 +119,7 @@ export default function Products({
                             {...prod}
                             key={index}
                             btnText="Add To Cart"
-                            image={prod.image}
+                            image={productImages[index]}
                             alt={`Product-Image-${index}`}
                             icon={<ShoppingCart className="text-blue group-hover:!text-white" />}
                         />

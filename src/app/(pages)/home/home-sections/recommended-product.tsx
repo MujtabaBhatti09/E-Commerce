@@ -8,6 +8,7 @@ import ImageCard from "@/components/ImageCard";
 import { useEffect, useState } from "react";
 import { getProducts } from "@/constants/getFakeProducts";
 import { productImages } from "@/constants/slugProducts";
+import Container from "@/components/Container";
 
 export default function RecommendedProducts() {
     const [products, setProducts] = useState<any[]>([])
@@ -22,51 +23,56 @@ export default function RecommendedProducts() {
 
     return (
         <>
-            <section className="py-[50px] space-y-20 2xl:px-0 px-4">
+            <section className="py-[50px] space-y-20">
                 {/* Section Recommended-Products */}
-                <div className="2xl:container mx-auto container-fluid flex gap-x-10">
-                    <div className="flex-[20%]">
-                        <ImageCard
-                            className="h-full w-full"
-                            childClassName="!justify-start"
-                            image={Galaxy}
-                            textClassName="!w-10/12"
-                            btnText="Shop Now"
-                            title="Flex On All The Others"
-                        />
-                    </div>
-                    <div className="space-y-4 flex-[80%]">
-                        <div className="flex justify-between">
-                            <h4 className="font-medium text-2xl">Recommended For You</h4>
-                            <Button
-                                variant="ghost"
-                                className="text-blue !p-0 hover:bg-transparent"
-                                icon={<ChevronRight className="text-blue" size={20} />}
-                            >
-                                View All
-                            </Button>
+                <Container>
+                    <div className="flex md:flex-row
+                    flex-col gap-x-10 gap-y-6"
+                    >
+                        <div className="flex-[20%]">
+                            <ImageCard
+                                className="h-full w-full"
+                                childClassName="!justify-start"
+                                image={Galaxy}
+                                textClassName="!w-10/12"
+                                btnText="Shop Now"
+                                title="Flex On All The Others"
+                            />
                         </div>
-                        <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-                            {products.map((prod, index) => (
-                                index < 4 &&
-                                <ProductCard
-                                    {...prod}
-                                    image={prod.image}
-                                    key={index}
-                                    icon={<ShoppingCart className="text-blue" />}
-                                    btnText="Add To Cart"
-                                />
-                            ))}
+                        <div className="space-y-4 flex-[80%]">
+                            <div className="flex justify-between">
+                                <h4 className="font-medium text-2xl">Recommended For You</h4>
+                                <Button
+                                    variant="ghost"
+                                    className="text-blue !p-0 hover:bg-transparent"
+                                    icon={<ChevronRight className="text-blue" size={20} />}
+                                >
+                                    View All
+                                </Button>
+                            </div>
+                            <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
+                                {products.map((prod, index) => (
+                                    index < 4 &&
+                                    <ProductCard
+                                        {...prod}
+                                        image={productImages[index]}
+                                        key={index}
+                                        icon={<ShoppingCart className="text-blue" />}
+                                        btnText="Add To Cart"
+                                    />
+                                ))}
 
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Container>
                 {/* Section PS5 */}
                 <div className="2xl:container mx-auto container-fluid rounded-lg h-full">
                     <ImageCard
                         image={PS5}
                         title="PlayStation 5 Console"
-                        childClassName="!p-20"
+                        className="md:h-auto h-[40vh]"
+                        childClassName="md:!p-20 !p-6"
                         btnVariant="fill"
                         btnClassName="!p-4 !text-white"
                         iconClassName="!text-white"
@@ -76,43 +82,47 @@ export default function RecommendedProducts() {
                     />
                 </div>
                 {/* Section Top-Products */}
-                <div className="2xl:container mx-auto container-fluid flex gap-x-6 grid-cols-12">
-                    <div className="flex-[80%] w-full space-y-4">
-                        <div className="flex justify-between">
-                            <h4 className="font-medium text-2xl">Top Products</h4>
-                            <Button
-                                variant="ghost"
-                                className="text-blue !p-0 hover:bg-transparent"
-                                icon={<ChevronRight className="text-blue" size={20} />}
-                            >
-                                View All
-                            </Button>
-                        </div>
-                        <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
-                            {products.map((prod, index) => (
-                                index < 4 &&
-                                <ProductCard
-                                    {...prod}
-                                    key={index}
-                                    image={prod.image}
-                                    icon={<ShoppingCart className="text-blue" />}
-                                    btnText="Add To Cart"
-                                />
-                            ))}
+                <Container>
+                    <div className="flex md:flex-row
+                    flex-col gap-x-10 gap-y-6"
+                    >
+                        <div className="flex-[80%] w-full space-y-4">
+                            <div className="flex justify-between">
+                                <h4 className="font-medium text-2xl">Top Products</h4>
+                                <Button
+                                    variant="ghost"
+                                    className="text-blue !p-0 hover:bg-transparent"
+                                    icon={<ChevronRight className="text-blue" size={20} />}
+                                >
+                                    View All
+                                </Button>
+                            </div>
+                            <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
+                                {products.map((prod, index) => (
+                                    index < 4 &&
+                                    <ProductCard
+                                        {...prod}
+                                        key={index}
+                                        image={productImages[index]}
+                                        icon={<ShoppingCart className="text-blue" />}
+                                        btnText="Add To Cart"
+                                    />
+                                ))}
 
+                            </div>
+                        </div>
+                        <div className="flex-[20%]">
+                            <ImageCard
+                                className="h-full w-full"
+                                childClassName="!justify-start"
+                                image={HandHeld}
+                                textClassName="!w-10/12"
+                                btnText="Shop Now"
+                                title="Flex On All The Others"
+                            />
                         </div>
                     </div>
-                    <div className="flex-[20%]">
-                        <ImageCard
-                            className="h-full w-full"
-                            childClassName="!justify-start"
-                            image={HandHeld}
-                            textClassName="!w-10/12"
-                            btnText="Shop Now"
-                            title="Flex On All The Others"
-                        />
-                    </div>
-                </div>
+                </Container>
             </section>
         </>
     )
