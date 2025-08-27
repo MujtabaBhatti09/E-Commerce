@@ -47,13 +47,14 @@ export default function ContactSction() {
                                     </div>
                             ))}
                             <Button
-                                text="Send"
                                 variant="outline"
                                 className="!w-full !rounded-full !text-black
                                 border-2 !border-black justify-center !py-2
                                 hover:bg-[var(--c-cyan)] hover:!border-cyan-500
                                 hover:!text-white"
-                            />
+                            >
+                                Send
+                                </Button>
                         </div>
                     </div>
                     <div className="space-y-6 p-4">
