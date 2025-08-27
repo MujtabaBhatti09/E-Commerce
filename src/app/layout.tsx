@@ -20,7 +20,7 @@ export const libre = Libre_Baskerville({
 })
 
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "E-Commerce | An advance E-Commerece Platform",
   description: "E-Commerce, an advance E-Commerece platform that fulfill your store needs and best user experience",
 };
