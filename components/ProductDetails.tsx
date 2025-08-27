@@ -174,10 +174,11 @@ export default function ProductScrollLock({
                         onChange={handleChange}
                     />
                     <Button
-                        text="Add To Cart"
                         variant="fill"
                         className="uppercase text-white !bg-cyan-500"
-                    />
+                    >
+                        Add To Cart
+                    </Button>
                     <div className="p-2 border border-black
                     group hover:border-cyan-500"
                     >

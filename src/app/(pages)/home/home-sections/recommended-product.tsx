@@ -40,7 +40,7 @@ export default function RecommendedProducts() {
                             <h4 className="font-medium text-2xl">Recommended For You</h4>
                             <Button
                                 variant="ghost"
-                                className="text-blue !p-0"
+                                className="text-blue !p-0 hover:bg-transparent"
                                 icon={<ChevronRight className="text-blue" size={20} />}
                             >
                                 View All
@@ -82,7 +82,7 @@ export default function RecommendedProducts() {
                             <h4 className="font-medium text-2xl">Top Products</h4>
                             <Button
                                 variant="ghost"
-                                className="text-blue !p-0"
+                                className="text-blue !p-0 hover:bg-transparent"
                                 icon={<ChevronRight className="text-blue" size={20} />}
                             >
                                 View All
