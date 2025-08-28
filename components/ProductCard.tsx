@@ -42,9 +42,9 @@ export default function ProductCard({
     return (
         <div className="card group-first:group border rounded-lg
         border-[#ddddddb3] hover:border-[#2453d3]
-        flex-1 transition-all duration-200
+        flex-1 transition-all duration-200 cursor-default
         ">
-            <div className="overflow-hidden w-full rounded-t-lg">
+            <div className="overflow-hidden w-full rounded-t-lg cursor-pointer">
                 <div
                     onMouseEnter={() => setHover(true)}
                     onMouseLeave={() => setHover(false)}
@@ -109,7 +109,7 @@ export default function ProductCard({
                     <p className="text-gray-400 text-xs">{brand}</p>
                     <h5 className="
                     line-clamp-2
-                    text-lg font-medium w-10/12">{title}</h5>
+                    md:text-lg text-sm font-medium w-10/12">{title}</h5>
                     {discount ?
                         <div className="flex gap-x-2 items-center">
                             {oldPrice && <p className="text-xs text-gray-300 line-through">RS.{price}</p>}

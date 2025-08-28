@@ -33,6 +33,7 @@ export default function RecommendedProducts() {
                             <ImageCard
                                 className="h-full w-full"
                                 childClassName="!justify-start"
+                                btnClassName="hover:!bg-transparent"
                                 image={Galaxy}
                                 textClassName="!w-10/12"
                                 btnText="Shop Now"
@@ -57,7 +58,7 @@ export default function RecommendedProducts() {
                                         {...prod}
                                         image={productImages[index]}
                                         key={index}
-                                        icon={<ShoppingCart className="text-blue" />}
+                                        icon={<ShoppingCart className="text-blue group-hover:!text-white" />}
                                         btnText="Add To Cart"
                                     />
                                 ))}
@@ -71,10 +72,10 @@ export default function RecommendedProducts() {
                     <ImageCard
                         image={PS5}
                         title="PlayStation 5 Console"
-                        className="md:h-auto h-[40vh]"
+                        className="md:h-auto sm:h-[40vh] h-[36]"
                         childClassName="md:!p-20 !p-6"
                         btnVariant="fill"
-                        btnClassName="!p-4 !text-white"
+                        btnClassName="!p-4 !text-white hover:!bg-[var(--c-blue-dark)]"
                         iconClassName="!text-white"
                         textClassName="!text-4xl whitespace-break-spaces"
                         btnText="Shop Now"
@@ -104,7 +105,7 @@ export default function RecommendedProducts() {
                                         {...prod}
                                         key={index}
                                         image={productImages[index]}
-                                        icon={<ShoppingCart className="text-blue" />}
+                                        icon={<ShoppingCart className="text-blue group-hover:!text-white" />}
                                         btnText="Add To Cart"
                                     />
                                 ))}
@@ -116,6 +117,7 @@ export default function RecommendedProducts() {
                                 className="h-full w-full"
                                 childClassName="!justify-start"
                                 image={HandHeld}
+                                btnClassName="hover:!bg-transparent"
                                 textClassName="!w-10/12"
                                 btnText="Shop Now"
                                 title="Flex On All The Others"

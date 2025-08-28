@@ -9,7 +9,7 @@ export default function SubCollectionPage() {
 
     return (
         <>
-            <div className="pt-40">
+            <div className="lg:pt-40 pt-16">
                 <Products
                     title={subCollection}
                     breadCrumb={<BreadCrumb pageName={String(subCollection)} />}

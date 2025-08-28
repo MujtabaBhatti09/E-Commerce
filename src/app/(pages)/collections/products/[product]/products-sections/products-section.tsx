@@ -3,9 +3,9 @@ import { ParamValue } from "next/dist/server/request/params";
 import { Filter, ShoppingCart } from "lucide-react";
 import { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
-import Slider from "@/components/Slider";
 import { getCategories, getProducts } from "@/constants/getFakeProducts";
 import { productImages } from "@/constants/slugProducts";
+import Banner from "@/components/Banner";
 
 interface Props {
     title?: string | ParamValue;
@@ -40,8 +40,7 @@ export default function Products({
         <>
             <section className="space-y-10">
                 {/* Banner */}
-                <Slider
-                    type="banner"
+                <Banner
                     bannerTitle={title}
                     bannerImage={BgDrone}
                     bannerSubTitleClassName="gap-y-2"

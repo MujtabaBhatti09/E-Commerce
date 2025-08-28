@@ -5,7 +5,7 @@ export default function TermSection() {
     return (
         <section className="py-[50px]">
             <Container>
-                <div className="px-8 space-y-4">
+                <div className="space-y-4 md:px-8">
                     {termsAndConditions.map((term, index) => (
                         <div
                             key={index}

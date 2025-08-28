@@ -1,10 +1,11 @@
+import Container from "@/components/Container";
 import { featuredCategories } from "@/constants";
 
 export default function FeaturedCategories() {
     return (
-        <section className="2xl:px-0 px-4 py-[50px]">
-            <div className="2xl:container mx-auto container-fluid">
-                <div className="w-full border border-gray
+        <section className="py-[50px]">
+            <Container>
+                <div className="w-full border border-gray cursor-default
                 grid lg:grid-cols-5 grid-cols-2 rounded-lg overflow-hidden"
                 >
                     {featuredCategories.map((cat, index) => (
@@ -14,7 +15,9 @@ export default function FeaturedCategories() {
                             group
                             hover:bg-[var(--c-blue)]
                             transition-colors duration-300
-                            ${index > 4 ? "border-r" : "border-r border-b"}
+                            border-r border-b
+                            [&:nth-child(5n)]:border-r-0
+                            [&:nth-last-child(-n+5)]:border-b-0
                             flex flex-col items-center
                             p-6 gap-y-2 border-gray`}
                         >
@@ -31,7 +34,7 @@ export default function FeaturedCategories() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </Container>
         </section >
     )
 }

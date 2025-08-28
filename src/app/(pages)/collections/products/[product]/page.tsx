@@ -9,7 +9,7 @@ export default function ProductPage() {
     const { product } = useParams()
     const cleanParam = cleanParams(product)
     return (
-        <div className="pt-40">
+        <div className="lg:pt-40 pt-16">
             <ProductCategorySection />
             <Products title={cleanParam} />
         </div>

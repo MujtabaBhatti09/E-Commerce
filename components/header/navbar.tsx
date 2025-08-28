@@ -16,10 +16,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface NavProp {
-    navPosition?: boolean;
+    setSidebar: (args: any) => void;
 }
 
-export default function Navbar({ navPosition }: NavProp) {
+export default function Navbar({ setSidebar }: NavProp) {
     const [dd, setDD] = useState<string>("")
     const [showNav, setShowNav] = useState(true); // visible by default
     const [isFixed, setIsFixed] = useState(false); // relative by default
@@ -53,7 +53,6 @@ export default function Navbar({ navPosition }: NavProp) {
         return () => window.removeEventListener("scroll", controlNavbar);
     }, [lastScrollY]);
     return (
-        // ${navPosition ? "fixed inset-0" : "relative"}
         <>
             <nav
                 className={`h-fit z-10 bg-white transition-transform duration-300
@@ -73,7 +72,12 @@ export default function Navbar({ navPosition }: NavProp) {
                     <Link href={"/"}>
                         <h2 className="text-5xl font-bold tracking-tight">kalles</h2>
                     </Link>
-                    <Image className="justify-self-end" src={Menu} alt={"Menu"} />
+                    <Image
+                        src={Menu}
+                        alt={"Menu"}
+                        className="justify-self-end"
+                        onClick={() => setSidebar((prev: any) => !prev)}
+                    />
                     {/* <div className="flex items-center w-fit justify-self-end gap-x-4 relative">
                         <Search className="
                             cursor-pointer
@@ -153,11 +157,11 @@ export default function Navbar({ navPosition }: NavProp) {
                 </div>
 
                 {/* Hidden After Large Breakpoint Blue NavItems Container */}
-                <div className="lg:block hidden bg-blue px-4" >
+                <div className="lg:block hidden bg-blue px-4 relative" >
                     <div className="2xl:container mx-auto container-fluid
                     flex justify-between items-center"
                     >
-                        <ul className="flex items-center text-white text-sm relative">
+                        <ul className="flex items-center text-white text-sm">
                             {navItems.map((val, index) => (
                                 val.title === "All Categories" ?
                                     <div key={index}>
@@ -183,8 +187,9 @@ export default function Navbar({ navPosition }: NavProp) {
                                                     exit={{ opacity: 0, y: 20 }}
                                                     transition={{ duration: 0.2, ease: "linear" }}
                                                     className="
-                                                        absolute top-full bg-white h-auto w-full
-                                                        shadow-lg grid grid-cols-4"
+                                                        absolute top-full bg-white
+                                                        h-auto w-full left-0
+                                                        shadow-lg grid grid-cols-5"
                                                 >
                                                     {val.childItems?.map((childItems, childIndex) => (
                                                         <Link

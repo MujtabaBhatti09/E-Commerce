@@ -47,7 +47,7 @@ export default function ImageCard({
                 <h2 className={`w-6/12 text-xl font-medium ${textClassName}`}>{title}</h2>
                 {subHeading && <p className={`text-gray text-sm ${subHeadingClassName}`}>{subHeading}</p>}
                 <Button
-                    className={`!p-0 !text-black w-fit hover:!bg-transparent ${btnClassName}`}
+                    className={`!p-0 !text-black w-fit ${btnClassName}`}
                     variant={btnVariant}
                     icon={<ChevronRight className={`${iconClassName}`} size={20} />}
                 >

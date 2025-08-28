@@ -5,7 +5,7 @@ export default function ReturnSection() {
     return (
         <section className="py-[50px]">
             <Container>
-                <div className="space-y-4 px-8">
+                <div className="space-y-4 md:px-8">
                     {returnExchange.map((retEx, retIndex) => (
                         <div
                             key={retIndex}

@@ -1,35 +1,65 @@
 'use client'
 
+import { useRef } from 'react';
+import Image from "next/image";
 import Button from "@/components/Button";
 import ImageCard from "@/components/ImageCard";
-import Slider from "@/components/Slider";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import { ChevronRight } from 'lucide-react';
 import { heroProducts, heroSliderData } from "@/constants";
-import { ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { SwiperSlide } from "swiper/react";
+import Container from '@/components/Container';
 
 export default function HeroSection() {
+    const prevRef = useRef<HTMLDivElement>(null);
+    const nextRef = useRef<HTMLDivElement>(null);
 
     return (
         <>
             <section className="lg:pt-38 pt-16 pb-[50px]">
                 <div className="space-y-10">
-                    <Slider type="slider" data={SliderData} />
-                    <div className="2xl:container container-fluid
-                    2xl:px-0 px-4 mx-auto"
-                    >
+                    <div className="carousel h-full w-full relative">
+                        <Swiper
+                            slidesPerView={1}
+                            spaceBetween={0}
+                            pagination={{
+                                clickable: true,
+                            }}
+                            loop={true}
+                            navigation={{
+                                prevEl: prevRef.current,
+                                nextEl: nextRef.current,
+                            }}
+                            onInit={(swiper) => {
+                                // Necessary because refs are null on first render
+                                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                                // @ts-ignore
+                                swiper.params.navigation.prevEl = prevRef.current;
+                                // @ts-ignore
+                                swiper.params.navigation.nextEl = nextRef.current;
+                                swiper.navigation.init();
+                                swiper.navigation.update();
+                            }}
+                            autoplay={{ delay: 3000, disableOnInteraction: false }}
+                            modules={[Navigation, Autoplay]}
+                            className="mySwiper"
+                        >
+                            {SliderData}
+                        </Swiper>
+                    </div>
+                    <Container>
                         <div className="lg:flex hidden gap-x-4 justify-between">
                             {heroProducts.map((item, index) => (
                                 <ImageCard
                                     key={index}
-                                    className=""
+                                    btnClassName="hover:!bg-transparent"
                                     title={item.title}
                                     image={item.image}
                                     btnText={item.btnText}
                                 />
                             ))}
                         </div>
-                    </div>
+                    </Container>
                 </div>
             </section>
         </>

@@ -4,6 +4,7 @@ import {
     Headphones,
     Heart,
     LayoutGrid,
+    Mail,
     Menu,
     Monitor,
     Phone,
@@ -13,6 +14,7 @@ import {
     Tv,
     User
 } from "lucide-react"
+import PkSvg from "@/public/icon-svg/pk.svg"
 
 export const searchNav = [
     {
@@ -118,5 +120,266 @@ export const bottomItem = [
     {
         icon: Search,
         name: "Search"
+    },
+]
+
+export const SidebarMenu = [
+    {
+        type: "acc",
+        image: null,
+        title: "Homepage1",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Homepage2",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Shop",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Product",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Portfolio",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Lookbook",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Blog",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "Buy Theme",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "none",
+        icon: Heart,
+        title: "Buy Theme"
+    },
+    {
+        type: "none",
+        icon: Search,
+        title: "Buy Theme"
+    },
+    {
+        type: "none",
+        icon: User,
+        title: "Buy Theme"
+    },
+    {
+        type: "none",
+        title: "Need Help?",
+        childItems: [
+            {
+                icon: Phone,
+                item: "+92 3133589623"
+            },
+            {
+                icon: Mail,
+                item: "+92 3133589623"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: null,
+        title: "English",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+    {
+        type: "acc",
+        image: PkSvg,
+        title: "PKR",
+        childItems: [
+            {
+                childItem: "Demo1",
+                path: "/"
+            },
+            {
+                childItem: "Demo2",
+                path: "/"
+            },
+            {
+                childItem: "Demo3",
+                path: "/"
+            },
+        ]
+    },
+]
+
+export const SidebarCategories = [
+    {
+        icon: "",
+        title: "Women's Clothing"
+    },
+    {
+        icon: "",
+        title: "Men's Clothing"
+    },
+    {
+        icon: "",
+        title: "Watches"
+    },
+    {
+        icon: "",
+        title: "Acessories"
+    },
+    {
+        icon: "",
+        title: "Electric"
+    },
+    {
+        icon: "",
+        title: "Shoes"
+    },
+    {
+        icon: "",
+        title: "Jewellery"
+    },
+    {
+        icon: "",
+        title: "Toys, Kids, & Baby"
+    },
+    {
+        icon: "",
+        title: "Decor"
     },
 ]

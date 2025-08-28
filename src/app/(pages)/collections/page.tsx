@@ -1,13 +1,12 @@
-import Slider from "@/components/Slider";
 import BannerImage from "@/public/assets/home/drone/Drone.jpg"
 import CollectionSection from "./collection-sections/collection-section";
+import Banner from "@/components/Banner";
 
 export default function Collection() {
     return (
         <>
-            <div className="pt-40">
-                <Slider
-                    type="banner"
+            <div className="lg:pt-40 pt-16">
+                <Banner
                     bannerImage={BannerImage}
                     bannerTitle="Collection"
                 />

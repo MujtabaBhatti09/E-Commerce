@@ -1,15 +1,14 @@
-import Slider from "@/components/Slider";
 import BannerImage from "@/public/assets/home/drone/Drone.jpg"
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import TermSection from "./terms-sections/terms-section";
+import Banner from "@/components/Banner";
 
 export default function TermCondition() {
     return (
         <>
-            <div className="pt-40">
-                <Slider
-                    type="banner"
+            <div className="lg:pt-40 pt-16">
+                <Banner
                     bannerTitle="Terms & Conditions"
                     bannerImage={BannerImage}
                     bannerSubTitle={<BreadCrumb pageName="Terms & Conditions" />}

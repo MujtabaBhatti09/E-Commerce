@@ -116,15 +116,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
 }, ref) => {
     
     // Base styles
-    const baseStyles = "inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+    const baseStyles = "cursor-pointer inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed";
     
     // Variant styles
     const variantStyles = {
-        fill: "bg-blue-600 text-white border border-blue-600 hover:bg-blue-700 focus:ring-blue-500",
-        outline: "bg-transparent text-blue-600 border border-blue-600 hover:bg-blue-50 focus:ring-blue-500",
-        ghost: "bg-transparent text-gray-700 border border-transparent hover:bg-gray-100 focus:ring-gray-500",
-        destructive: "bg-red-600 text-white border border-red-600 hover:bg-red-700 focus:ring-red-500",
-        secondary: "bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200 focus:ring-gray-500"
+        fill: "bg-blue-600 text-white border border-blue-600 hover:bg-blue-700",
+        outline: "bg-transparent text-blue-600 border border-blue-600 hover:bg-blue-50",
+        ghost: "bg-transparent text-gray-700 border border-transparent",
+        destructive: "bg-red-600 text-white border border-red-600 hover:bg-red-700",
+        secondary: "bg-gray-100 text-gray-900 border border-gray-300 hover:bg-gray-200"
     };
     
     // Size styles

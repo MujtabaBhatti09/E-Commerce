@@ -10,7 +10,7 @@ export default function DroneSection() {
                 btnVariant="fill"
                 iconClassName="text-white"
                 btnClassName="!p-4 !text-white"
-                className="2xl:h-[60vh] h-screen"
+                className="2xl:h-[60vh] md:h-screen h-[50vh]"
                 title="Hasselblad Camera, Create to Inspire"
                 image={Drone}
                 textClassName="!text-4xl leading-12 !w-1/3 whitespace-break-spaces"
